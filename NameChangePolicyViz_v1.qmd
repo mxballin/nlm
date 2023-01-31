@@ -144,3 +144,38 @@ fig <- subplot(fig1,fig2)%>%
 
 fig
 ```
+
+```{r}
+#| echo: false
+implementationyear<-tribble(
+  ~year,~journals,~publishers,
+  "2019",12,1,
+  "2020",1111,8,
+  "2021",2186,12,
+  "2022",120,3,
+  "unknown",821,15
+)
+
+implementationyear <-implementationyear %>%
+  mutate(journals_pct=journals/4250*100)%>%
+  mutate(publishers_pct=publishers/39*100)
+```
+
+```{r}
+#| echo: false
+progress <- tribble(~"type",~"unknown",~"Y2019",~"Y2020",~"Y2021",~"Y2022",
+"journals",19.3,.3,26.2,51.4,2.8,
+"publishers",38.5,2.6,20.5,30.8,7.7
+)
+
+implementation <- plot_ly(progress, y = ~type, x = ~Y2019, type = 'bar', name = '2019')
+implementation <- implementation %>% add_trace(x = ~Y2020, name = '2020')
+implementation <- implementation %>% add_trace(x = ~Y2021, name = '2021')
+implementation <- implementation %>% add_trace(x=~Y2022, name="2022")
+implementation <- implementation %>% add_trace(x=~unknown, name='unknown date')
+implementation <- implementation %>% layout(title = "Policy Implementation Coverage by Year",
+  xaxis = list(title = 'Percent of Corpus'), barmode = 'stack')
+
+
+implementation
+```
