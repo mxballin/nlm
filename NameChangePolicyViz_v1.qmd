@@ -1,7 +1,6 @@
 ---
 title: "NameChangePolicy"
 format: html
-embed-resources: true
 editor: visual
 ---
 
@@ -27,8 +26,7 @@ top10<- tribble(
 "Lippincott",	128,"y",
 "Bentham",	97,"n",
 "IEEE",	93,"y",
-"Dove",73,"y",
-"Other",2359,"n")
+"Dove",73,"y")
 
 top10
 ```
