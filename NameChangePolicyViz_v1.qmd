@@ -1,0 +1,148 @@
+---
+title: "NameChangePolicy"
+format: html
+embed-resources: true
+editor: visual
+---
+
+## Author Name Change Policies by Publishers included in PubMed
+
+```{r}
+#| echo: false
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(ggplot2))
+suppressPackageStartupMessages(library(plotly))
+```
+
+```{r}
+#| echo: false
+top10<- tribble(
+  ~publisher,~journals,~policy,
+"Elsevier",1365,"y",
+"Wiley",1023,"y",
+"SpringerNature",512,"y",
+"Oxford",	339,"y",
+"Sage",	144,"y",
+"Karger",	134,"n",
+"Lippincott",	128,"y",
+"Bentham",	97,"n",
+"IEEE",	93,"y",
+"Dove",73,"y",
+"Other",2359,"n")
+
+top10
+```
+
+```{r}
+#| echo: false
+top10tree <- plot_ly(
+  type='treemap',
+  labels=c("Has Policy", "Other Publishers (With Policy)", "Elsevier" ,      "Wiley"    ,      "Springer Nature", "Oxford"     ,    "Sage"    ,       "Karger" ,     "Lippincott"  ,   "Bentham"    ,    "IEEE"     ,      "Dove"     ,      "Other Publishers (No Policy)", "No Policy"  ),
+  parents=c("", "Has Policy", "Has Policy", "Has Policy", "Has Policy" ,"Has Policy", "Has Policy", "No Policy", "Has Policy" ,"No Policy" ,"Has Policy", "Has Policy", "No Policy",""),
+    values=c(0,573,1365, 1023 , 512  ,339,  144 , 134 , 128,   97  , 93,   73,1786,0),
+  textinfo="label+value"
+)
+
+top10tree
+```
+
+```{r}
+#| echo: false
+policyfeatures <- tribble(
+~category, ~journals,	~publishers,
+"Total",	6267,	933,
+"No Policy",	2017,	894,
+"Has Policy",	4250,	39,
+"Invisible Option",	4238,	37,
+"Databases",	4136,	35,
+"Co-authors",	1768,	26,
+"Pronouns",	992,	16,
+"Email",	272,	11,
+"ID Confirmation",	347,	11,
+"Internal Data Retention",	274,	10,
+"Photos",	105,	7)
+
+policyfeatures
+
+```
+
+```{r}
+#| echo: false
+haspolicypie <- plot_ly()
+haspolicypie <- haspolicypie %>%
+  add_pie(
+    labels = c("No Policy", "Has Policy"),
+    values = c(2017,4250),
+    name = "Journals",
+    domain = list(row = 0, column = 0),
+    textinfo="percent")
+haspolicypie <- haspolicypie %>%
+  add_pie(
+    labels = c("No Policy", "Has Policy"),
+    values = c(894,39),
+    name = "Publishers",
+    domain = list(row = 0, column = 1),
+        textinfo="percent")
+
+haspolicypie <- haspolicypie %>% layout(title = "Status of Name Change Policies <br> Applying to Journals and Corresponding Publishers <br> in PubMed", showlegend = T,
+                      grid=list(rows=1, columns=2),
+                      xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+                      yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+
+annotations = list( 
+  list( 
+    x = 0.23,  
+    y = .1,  
+    text = "Journals",  
+    xref = "paper",  
+    yref = "paper",  
+    xanchor = "center",  
+    yanchor = "bottom",  
+    showarrow = FALSE 
+  ),  
+  list( 
+    x = 0.76,  
+    y = .1,  
+    text = "Publishers",  
+    xref = "paper",  
+    yref = "paper",  
+    xanchor = "center",  
+    yanchor = "bottom",  
+    showarrow = FALSE 
+  ))
+
+haspolicypie <- haspolicypie %>%layout(annotations = annotations) 
+
+haspolicypie
+```
+
+```{r}
+#| echo: false
+policyfeatures_bar <- policyfeatures%>% slice(4:11)
+fig1 <-  plot_ly(policyfeatures_bar,
+                 y=~category,
+                 x=~journals,
+                 type='bar',
+                 name='Journals',
+                 texttemplate="%{label}: %{value}")
+fig2 <- plot_ly(policyfeatures_bar,
+                y=~category,
+                x=~publishers,
+                type='bar',
+                name='Publishers',
+                texttemplate="%{label}: %{value}")
+fig <- subplot(fig1,fig2)%>%
+  layout(title="Comparing Journal vs Publisher Policy Feature Frequency",
+         yaxis = list(
+                     zerolinecolor = '#ffff',
+                     zerolinewidth = 2,
+                     gridcolor = 'ffff',
+                     showticklabels=FALSE),
+                  yaxis2 = list(
+                     zerolinecolor = '#ffff',
+                     zerolinewidth = 2,
+                     gridcolor = 'ffff',
+                     showticklabels=FALSE))
+
+fig
+```
