@@ -1,10 +1,10 @@
 ---
-title: "NameChangePolicy"
+title: "Author Name Change Policies by Publishers included in PubMed"
 format: html
 editor: visual
 ---
 
-## Author Name Change Policies by Publishers included in PubMed
+## Abstract
 
 ```{r}
 #| echo: false
@@ -12,6 +12,30 @@ suppressPackageStartupMessages(library(tidyverse))
 suppressPackageStartupMessages(library(ggplot2))
 suppressPackageStartupMessages(library(plotly))
 ```
+
+## Background
+
+In 2021, the Trans Name Change Policy Working Group (NCPWG) authored a article for the Committee for Publishing Ethics (COPE) that outlined their vision for "a more trans inclusive publishing world" (Tannenbaum et al, 2021). In the article, the group detailed barriers to receiving full credit for their academic work and offered guiding principles for what an inclusive name change policy should look like.
+
+The principles discussed in the article are as follows:
+
+-   Accessibility - *Name changes should be available to authors upon request without legal documentation, unnecessary barriers, burdens, or labor placed upon the author making the request.*
+
+-   Comprehensiveness - *Name changes should remove all instances of an author\'s previous name from the records maintained and disseminated by the publisher.*
+
+-   Invisibility - *Name changes should not draw attention to the gender identity of an author, nor create a clear juxtaposition between the current name and the previous name.*
+
+-   Expediency and Simplicity - *Name changes should be implemented in a timely manner, and with a minimum of bureaucratic overhead.*
+
+-   Recurrence and Maintenance - *Publishers should regularly audit and correct new instances of changed names in order to prevent ongoing dissemination of incorrect information.*
+
+    (Tannenbaum et al, 2021).
+
+While both the COPE and the National Information Standards Organization (NISO) formed working groups to develop recommended practice in relation to the changing of author names post-publication in the academic record, neither group has released official recommendations as of the beginning of 2023. Still, the past three years have seen a proliferation of publisher-driven development of name change policies for their journals.
+
+With the growing presence of name change policies in mind, this paper seeks to better understand how health science publishers, databases, and other organizations are handling author name changes and the extent of the presence of these policies in the health publishing landscape.
+
+## Methodology
 
 ```{r}
 #| echo: false
@@ -34,6 +58,19 @@ top10
 ```{r}
 #| echo: false
 top10tree <- plot_ly(
+  type='treemap',
+  labels=c("Has Policy", "Other Publishers (With Policy)", "Elsevier" ,      "Wiley"    ,      "Springer Nature", "Oxford"     ,    "Sage"    ,       "Karger" ,     "Lippincott"  ,   "Bentham"    ,    "IEEE"     ,      "Dove"     ,      "Other Publishers (No Policy)", "No Policy"  ),
+  parents=c("", "Has Policy", "Has Policy", "Has Policy", "Has Policy" ,"Has Policy", "Has Policy", "No Policy", "Has Policy" ,"No Policy" ,"Has Policy", "Has Policy", "No Policy",""),
+    values=c(0,573,1365, 1023 , 512  ,339,  144 , 134 , 128,   97  , 93,   73,1786,0),
+  textinfo="label+value"
+)
+
+top10tree
+```
+
+```{r}
+#| echo: false
+publishertree <- plot_ly(
   type='treemap',
   labels=c("Has Policy", "Other Publishers (With Policy)", "Elsevier" ,      "Wiley"    ,      "Springer Nature", "Oxford"     ,    "Sage"    ,       "Karger" ,     "Lippincott"  ,   "Bentham"    ,    "IEEE"     ,      "Dove"     ,      "Other Publishers (No Policy)", "No Policy"  ),
   parents=c("", "Has Policy", "Has Policy", "Has Policy", "Has Policy" ,"Has Policy", "Has Policy", "No Policy", "Has Policy" ,"No Policy" ,"Has Policy", "Has Policy", "No Policy",""),
