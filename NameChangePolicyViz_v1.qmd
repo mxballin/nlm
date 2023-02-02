@@ -12,6 +12,7 @@ suppressPackageStartupMessages(library(tidyverse))
 suppressPackageStartupMessages(library(ggplot2))
 suppressPackageStartupMessages(library(plotly))
 suppressPackageStartupMessages(library(formattable))
+suppressPackageStartupMessages(library(DT))
 ```
 
 ## Background
@@ -22,7 +23,7 @@ The principles discussed in the article are as follows:
 
 > Accessibility - Name changes should be available to authors upon request without legal documentation, unnecessary barriers, burdens, or labor placed upon the author making the request.
 >
-> Comprehensiveness - Name changes should remove all instances of an author\'s previous name from the records maintained and disseminated by the publisher.
+> Comprehensiveness - Name changes should remove all instances of an author's previous name from the records maintained and disseminated by the publisher.
 >
 > Invisibility - Name changes should not draw attention to the gender identity of an author, nor create a clear juxtaposition between the current name and the previous name.
 >
@@ -190,11 +191,11 @@ top10<- tribble(
   ~publisher,~journals,~policy,
 "Elsevier",1365,TRUE,
 "Wiley",1023,TRUE,
-"SpringerNature",512,TRUE,
+"Springer Nature",512,TRUE,
 "Oxford",	339,TRUE,
 "Sage",	144,TRUE,
 "Karger",	134,FALSE,
-"Lippincott",	128,TRUE,
+"Lippincott, Williams & Wilkins",	128,TRUE,
 "Bentham",	97,FALSE,
 "IEEE",	93,TRUE,
 "Dove",73,TRUE)
@@ -202,17 +203,13 @@ top10<- tribble(
 top10 <- top10 %>%
   mutate(percent=journals/6267)
 
-true_false_formatter <-
-  formatter("span",
-            style = x ~ style(
-              font.weight = "bold",
-              color = ifelse(x == TRUE, "forestgreen", ifelse(x == FALSE, "red", "black"))
-            ))
 
-formattable(top10,
+top10_table<-formattable(top10,
             align = c("l", rep("r", NCOL(top10) - 1)),
             list(
-              `policy` = true_false_formatter,
+              `policy`=formatter("span",
+    style = x ~ style(color = ifelse(x, "green", "red")),
+    x ~ icontext(ifelse(x, "ok", "remove"), ifelse(x, "Yes", "No"))),
               `percent` = percent)
 )
 ```
@@ -228,28 +225,6 @@ top10tree <- plot_ly(
 )
 
 top10tree
-```
-
-```{r}
-policytable <- tribble(
-~"Name",
-~"Date Instigated",
-~"Invisible Option",
-~"Co-authors",
-~"Pronouns",
-~"Photos",
-~"Email",
-~"ID Confirmation",
-~"Update Format",
-~"Internal Data Retention",
-~"Databases",
-~"Citation Updates",
-~"Mentions COPE",
-~"Notes",
-"Elsevier",2021,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,"Email",FALSE,TRUE,FALSE,FALSE,NA
-)
-
-policytable
 ```
 
 ### Policy Features
@@ -427,3 +402,87 @@ implementation
 ## Discussion
 
 ## Bibliography
+
+## Appendix A: Publisher Policy Features Table
+
+```{r}
+#| echo: false
+policytable <- tribble(
+~"Name",~"# of Journals",~"Date Instigated",~"Invisible Option",~"Co-authors",~"Pronouns",~"Photos",~"Email",~"ID Confirmation",~"Update Format",~"Internal Data Retention",~"Databases",~"Citation Updates",~"Mentions COPE",~"Notes",
+"Elsevier",1365,2021,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,NA,TRUE,NA,
+"Wiley",1023,2020,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,NA,TRUE,NA,
+"Springer Nature",512,2021,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,NA,FALSE,TRUE,NA,TRUE,NA,
+"Oxford University Press",339,NA,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,NA,TRUE,"Policy mentions COPE generally but does not cite the name change policy guidance.",
+"SAGE Publishing",144,2021,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"FORM",FALSE,TRUE,FALSE,TRUE,"Acknowledges that it does not currently update citations but mentions working towards being able to do so in the future.",
+"Lippincott, Williams & Wilkins",128,NA,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,NA,FALSE,TRUE,NA,FALSE,NA,
+"IEEE",93,NA,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,"FORM",TRUE,TRUE,TRUE,TRUE, "Will only update citations in IEEE publications",
+"Dove Medical Press",73,NA,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,"FORM",FALSE,TRUE,NA,FALSE, NA,
+"BMJ (British Medical Association)",67,2021, TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,"EMAIL",TRUE,TRUE,FALSE,FALSE,NA,
+"Taylor & Francis",66,NA,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,NA,FALSE,NA,
+"Frontiers",64,2022,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,"FORM",FALSE,TRUE,NA,FALSE,NA,
+"Cambridge University Press", 60,NA,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,"EMAIL",FALSE,FALSE,NA,FALSE,NA,
+"De Gruyter",53,2022,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"EMAIL",TRUE,TRUE,NA,TRUE,"COPE guidance is mentioned in a blog post about the policy but not in the language of the policy itself.",
+"American Chemical Society",47,2021,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,"FORM",FALSE,TRUE,FALSE,FALSE,"Acknowledges that it does not currently update citations but mentions working towards being able to do so in the future.",
+"American Psychological Association",42,2020,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,FALSE,NA,FALSE,NA,
+"Royal Society of Chemistry",27,2020,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,"EMAIL",TRUE,TRUE,FALSE,FALSE,NA,
+"Mary Ann Liebert",16,NA,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,"EMAIL",FALSE,FALSE,NA,FALSE,NA,
+"American Medical Association",14,NA,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,NA,FALSE,TRUE,NA,FALSE,NA,
+"IOP Publishing",14,2021,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,"FORM",FALSE,TRUE,FALSE,FALSE,NA,
+"Association for Computing Machinery",12,2019,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,"EMAIL",TRUE,TRUE,TRUE,FALSE,"Will only update citations in ACM publications",
+"MIT Press",10,NA,NA,FALSE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,FALSE,NA,FALSE,NA,
+"Ubiquity Press",10,2021,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,"FORM",TRUE,TRUE,TRUE,TRUE,"Only offers updating citations within the articles in question.",
+"American Institute of Physics",9,2021,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,FALSE,FALSE,"Acknowledges that it does not currently update citations but mentions working towards being able to do so in the future.",
+"Public Library of Science (PLoS)",9,2020,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,NA,TRUE,"Policy mentions COPE generally but does not cite the name change policy guidance.",
+"EDP Sciences",8,NA,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,"EMAIL",FALSE,TRUE,FALSE,TRUE,NA,
+"Future Science Group",8,2021,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,NA,FALSE,NA,
+"American Physiological Society",6,2021,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,NA,FALSE,NA,
+"Company of Biologists",5,2021,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,"EMAIL",TRUE,TRUE,NA,FALSE,NA,
+"Emerald Group Publishing",5,2020,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,NA,FALSE,TRUE,NA,FALSE,NA,
+"Optical Society of America",5,NA,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,"EMAIL",FALSE,TRUE,FALSE,FALSE,NA,
+"Rockefeller University Press",3,NA,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"FORM",TRUE,TRUE,FALSE,FALSE,NA,
+"Copernicus Publications",3,2022,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,FALSE,FALSE,NA,
+"American Society for Microbiology",2,2020,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,"EMAIL",FALSE,TRUE,FALSE,FALSE,NA,
+"IOS Press",2,NA, FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,"FORM",FALSE,FALSE,NA,TRUE,NA,
+"PeerJ Publishing",2,2021,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,NA,FALSE,NA,
+"Radiological Society of North America",2,NA,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,"EMAIL",FALSE,TRUE,NA,FALSE,NA,
+"Royal Society",2,NA,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,"EMAIL",TRUE,TRUE,NA,FALSE,NA,
+"Wellcome Trust",2,2020,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,"EMAIL",TRUE,TRUE,NA,FALSE,NA,
+"eLife Sciences Publications",1,2020,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,"EMAIL",FALSE,TRUE,FALSE,FALSE,NA
+)
+
+formattable(policytable,
+            align = c("l", rep("r", NCOL(top10) - 1)),
+            list(`Date Instigated`= color_tile("lightpink", "lightblue"),
+                `# of Journals`=color_tile("whitesmoke","plum"),
+              `Invisible Option`=formatter("span",
+    style = x ~ style(color = ifelse(x, "green", "red")),
+    x ~ icontext(ifelse(x, "ok", "remove"), ifelse(x, "Yes", "No"))),
+    `Co-authors`=formatter("span",
+    style = x ~ style(color = ifelse(x, "green", "red")),
+    x ~ icontext(ifelse(x, "ok", "remove"), ifelse(x, "Yes", "No"))),
+    `Pronouns`=formatter("span",
+    style = x ~ style(color = ifelse(x, "green", "red")),
+    x ~ icontext(ifelse(x, "ok", "remove"), ifelse(x, "Yes", "No"))),
+    `Photos`=formatter("span",
+    style = x ~ style(color = ifelse(x, "green", "red")),
+    x ~ icontext(ifelse(x, "ok", "remove"), ifelse(x, "Yes", "No"))),
+    `Email`=formatter("span",
+    style = x ~ style(color = ifelse(x, "green", "red")),
+    x ~ icontext(ifelse(x, "ok", "remove"), ifelse(x, "Yes", "No"))),
+    `ID Confirmation`=formatter("span",
+    style = x ~ style(color = ifelse(x, "green", "red")),
+    x ~ icontext(ifelse(x, "ok", "remove"), ifelse(x, "Yes", "No"))),
+    `Internal Data Retention`=formatter("span",
+    style = x ~ style(color = ifelse(x, "green", "red")),
+    x ~ icontext(ifelse(x, "ok", "remove"), ifelse(x, "Yes", "No"))),
+    `Databases`=formatter("span",
+    style = x ~ style(color = ifelse(x, "green", "red")),
+    x ~ icontext(ifelse(x, "ok", "remove"), ifelse(x, "Yes", "No"))),
+    `Citation Updates`=formatter("span",
+    style = x ~ style(color = ifelse(x, "green", "red")),
+    x ~ icontext(ifelse(x, "ok", "remove"), ifelse(x, "Yes", "No"))),
+    `Mentions COPE`=formatter("span",
+    style = x ~ style(color = ifelse(x, "green", "red")),
+    x ~ icontext(ifelse(x, "ok", "remove"), ifelse(x, "Yes", "No"))))
+)
+```
