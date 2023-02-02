@@ -533,7 +533,7 @@ policytable <- tribble(
 "eLife Sciences Publications",1,2020,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,"EMAIL",FALSE,TRUE,FALSE,FALSE,NA
 )
 
-formattable(policytable,
+as.datatable(formattable(policytable,
             align = c("l", rep("r", NCOL(top10) - 1)),
             list(`Date Instigated`= color_tile("lightpink", "lightblue"),
                 `# of Journals`=color_tile("whitesmoke","plum"),
@@ -567,5 +567,5 @@ formattable(policytable,
     `Mentions COPE`=formatter("span",
     style = x ~ style(color = ifelse(x, "green", "red")),
     x ~ icontext(ifelse(x, "ok", "remove"), ifelse(x, "Yes", "No"))))
-)
+))
 ```
