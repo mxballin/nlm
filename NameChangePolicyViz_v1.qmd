@@ -16,7 +16,7 @@ suppressPackageStartupMessages(library(DT))
 suppressPackageStartupMessages(library(RColorBrewer))
 ```
 
-## Background
+## 1. Background
 
 In 2021, the Trans Name Change Policy Working Group (NCPWG) authored a article for the Committee for Publishing Ethics (COPE) that outlined their vision for "a more trans inclusive publishing world" (Tannenbaum et al, 2021). In the article, the group detailed barriers that impact trans, nonbinary, and other individuals' ability to receive full credit for their academic work in the manner in which they would wish to be addressed. They also laid out guiding principles for name change policies that would enable publishing to be more inclusive and to reduce emotional and intellectual barriers to achieving a version of record (VOR) that reflects \[need to wordsmith\].
 
@@ -38,9 +38,9 @@ While both the COPE and the National Information Standards Organization (NISO) f
 
 With the growing presence of name change policies in mind, this paper seeks to better understand how health science publishers, databases, and other organizations are handling author name changes and the extent of the presence of these policies in the health publishing landscape.
 
-## Methodology
+## 2. Methodology
 
-### Scope
+### 2. 1 Scope
 
 The data acquired for analysis for this survey focuses on the content of indexed in PubMed (including Medline) and the full-text database PubMed Central. It was acquired through querying the National Center for Biotechnology Information's xxxxxxx for data providing entities that contribute to the service. These data providers can be publishing companies as well as \[Silverchair, etc.\]
 
@@ -48,7 +48,7 @@ In order to create a more manageable search and to reflect the researcher's ling
 
 A total of 931 publishing bodies were included as part of the data.
 
-### Policy Identification
+### 2.2. Policy Identification
 
 Following the identification of publishers included in PubMed, a search was conducted for whether each publisher has published a name change policy.
 
@@ -62,11 +62,11 @@ In acknowledgement of the fact that not all policies include the phrase "name ch
 
 A total of 39 publishers were identified as having some form of name change policy.
 
-#### Policy Dates
+#### 2.2.1 Policy Dates
 
 When the policies were identified, if a date of release or institution was included, it was documented as part of the publisher's policy profile. For those policies for which no date was published, additional news items announcing the release of the policy were used to identify such a date. If neither source of publication date were available, the Wayback Machine was used to determine likely publication year based on when the policy was made public on the publishers' webpage. If the pages were not sufficiently documented on the Wayback Machine (ie snapshots were only available from 2022), the date of the policy was left 'NA'.
 
-### Policy Features
+### 2.3 Policy Features
 
 Once the publishers with policies were identified, they underwent a content analysis that was based on the principles put forth by the NCWG.
 
@@ -74,13 +74,13 @@ Each policy was read at least twice and assessed for their adherence to concepts
 
 What emerged from this analysis was the identification of common features that were included in these policies, which then became the basis for the criteria chosen to compare the policies as part of this work. The criteria documented about the policies are as follows:
 
-**Invisibility**
+#### **2.3.1 Invisibility**
 
 -   Invisible Option - Does the publisher offer the ability to change an author's name without the publication of an erratum, correction, or other type of notice?
 
 -   Mention of co-authors or corresponding authors - Does the publisher mention the contacting of co-authors or corresponding authors? If so, is it a requirement that someone outside of the author and the publisher themselves be contacted?
 
-**Comprehensiveness**
+#### **2.3.2 Comprehensiveness**
 
 -   Pronouns - Does the policy include mention of the ability to change pronouns?
 
@@ -88,7 +88,7 @@ What emerged from this analysis was the identification of common features that w
 
 -   Email - Does the policy include mention of the ability to change associated email?
 
-**Expediency and Simplicity**
+#### **2.3.3 Expediency and Simplicity**
 
 -   Proof of Change - Does the publisher require proof of name change?
 
@@ -96,7 +96,7 @@ What emerged from this analysis was the identification of common features that w
 
 -   Method of request - How does the publisher require the author to initiate a name change?
 
-**Recurrence and maintenance**
+#### **2.3.4 Recurrence and maintenance**
 
 -   Mention of the Internal Retention of Data - Does the publisher mention whether or not the initial name under which the article was published will be retained in their data or not?
 
@@ -104,7 +104,7 @@ What emerged from this analysis was the identification of common features that w
 
 -   Provision of updated data to indexing services - Does the publisher mention whether they will reserve the article's data to indexing services?
 
-### Policy Analysis
+### 2.4 Policy Analysis
 
 Following policy related data collection, findings were collected and tallied in a single spreadsheet. Using xxxx data provided by the, corresponding journal totals for each publisher were identified and added to the spreadsheet to be included as part of the analysis.
 
@@ -112,9 +112,9 @@ A total of 6267 journals were included as part of the data.
 
 Data analysis and visualization were performed in Microsoft Excel and R.
 
-## Findings
+## 3 Findings
 
-### Policy Pervasiveness
+### 3.1 Policy Pervasiveness
 
 ```{r}
 #| echo: false
@@ -246,7 +246,7 @@ top10tree<- top10tree %>% layout(
 top10tree
 ```
 
-### Policy Features
+### 3.2 Policy Features
 
 ```{r}
 #| echo: false
@@ -256,7 +256,7 @@ brewer.pal(11,"PiYG")
 
 ```
 
-#### Invisibility
+#### 3.2.1 Invisibility
 
 ```{r}
 #| echo: false
@@ -291,7 +291,7 @@ fig <- subplot(fig1,fig2)%>%
 fig
 ```
 
-#### Comprehensiveness
+#### 3.2.2 Comprehensiveness
 
 ```{r}
 #| echo: false
@@ -326,7 +326,7 @@ comprehensiveness <- subplot(fig7,fig8)%>%
 comprehensiveness
 ```
 
-#### Expediency and Simplicity
+#### 3.2.3 Expediency and Simplicity
 
 ```{r}
 #| echo: false
@@ -361,7 +361,7 @@ expediency <- subplot(fig3,fig4)%>%
 expediency
 ```
 
-#### Recurrence and Maintenance
+#### 3.2.4 Recurrence and Maintenance
 
 ```{r}
 #| echo: false
@@ -396,7 +396,7 @@ recurrence <- subplot(fig5,fig6)%>%
 recurrence
 ```
 
-### Policies Over Time
+### 3.3 Policies Over Time
 
 ```{r}
 #| echo: false
@@ -443,9 +443,9 @@ implementation <- implementation %>% layout(title = "Policy Implementation Cover
 implementation
 ```
 
-## Discussion
+## 4 Discussion
 
-Unique features of certain policies
+### 4.1 Unique features of certain policies
 
 -   Springer/Nature's Take on guiding principles
 
@@ -487,7 +487,7 @@ Unique features of certain policies
 
             -   Most leave any contact up to the author independently, but some offer to make the contact and a few require that the corresponding author be contacted in order for the article to be changed.
 
-Alignment with underlying principles
+### 4.2 Alignment with COPE and/or stated principles
 
 -   'Calling out' trans and nb authors and making the policy only available to them is ultimately harmful in its own way.
 
@@ -515,7 +515,9 @@ Alignment with underlying principles
 
         -   Need to find which ones again oops
 
-How can medical librarians prepare scholars who are looking to change the version of record and also how can they advocate for inclusive policies
+### 4.3 Considering the Role of Librarians
+
+How can medical librarians prepare scholars who are looking to change the version of record?How can they advocate for inclusive policies?
 
 -   Are librarians prepared to address this in our own information architecture?
 
@@ -529,13 +531,13 @@ How can medical librarians prepare scholars who are looking to change the versio
 
 Discussion question: What are the roles of health librarians and informationists in developing and facilitating an inclusive publishing environment?
 
-## Limitations
+## 5 Limitations
 
-## Conflicts of Interest
+## 6 Conflicts of Interest
 
-## Acknowledgement
+## 7 Acknowledgement
 
-## Bibliography
+## 8 Bibliography
 
 ## Appendix A: Publisher Policy Features Table
 
