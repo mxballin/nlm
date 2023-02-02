@@ -454,6 +454,12 @@ Unique features of certain policies
 
 -   Limited number of publishers offering citation updates
 
+    -   Several acknowledge these limitations and mention efforts to create a consortium of publishing bodies that would work together to make these updates
+
+        -   SAGE, ACS, AIP
+
+    -   9 publishers state that they cannot update it, which in and of itself is useful (see later commentary on the idea that comprehensiveness is better than vagueness with regards to what a publisher can and cannot do).
+
 -   Several publishers offer a variety of options for silent vs. in-print changes
 
     -   More options = more freedom?
@@ -472,11 +478,9 @@ Unique features of certain policies
 
         -   Contacting co-authors/corresponding authors
 
-            -   Most leave any contact up to the author indepdendently, but some offer to be the contacter and a few require that the corresponding author be contacted in order for the article to be changed.
+            -   Most leave any contact up to the author independently, but some offer to make the contact and a few require that the corresponding author be contacted in order for the article to be changed.
 
-    -   Are librarians prepared to address this in our own information architecture?
-
-Lack of alignment with underlying principles
+Alignment with underlying principles
 
 -   'Calling out' trans and nb authors and making the policy only available to them is ultimately harmful in its own way.
 
@@ -494,7 +498,11 @@ Lack of alignment with underlying principles
 
     -   Helps authors to understand the process of data distribution? Most mention it is possible that 3rd party indexers might have their own policy/that they have no control over when those update, but how clear is it to someone who doesn't understand the publishing process? Need for better transparency on 3rd party indexers' end?
 
+-   Mention/influence of COPE and the COPE guidelines
+
 How can medical librarians prepare scholars who are looking to change the version of record and also how can they advocate for inclusive policies
+
+-   Are librarians prepared to address this in our own information architecture?
 
 -   journals such as JMLA should develop policies
 
