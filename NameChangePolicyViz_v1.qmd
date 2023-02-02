@@ -399,15 +399,17 @@ recurrence
 implementationyear<-tribble(
   ~year,~journals,~publishers,
   "2019",12,1,
-  "2020",1111,8,
-  "2021",2186,12,
-  "2022",120,3,
-  "unknown",821,15
+  "2020",1110,7,
+  "2021",2196,14,
+  "2022",160,6,
+  "unknown",772,11
 )
 
 implementationyear <-implementationyear %>%
   mutate(journals_pct=journals/4250*100)%>%
   mutate(publishers_pct=publishers/39*100)
+
+implementationyear
 ```
 
 ```{r}
@@ -420,8 +422,8 @@ brewer.pal(6,"Set2")
 ```{r}
 #| echo: false
 progress <- tribble(~"type",~"unknown",~"Y2019",~"Y2020",~"Y2021",~"Y2022",
-"journals",19.3,.3,26.2,51.4,2.8,
-"publishers",38.5,2.6,20.5,30.8,7.7
+"journals",18.2,.3,26.1,51.7,3.8,
+"publishers",28.2,2.6,17.9,35.9,15.4
 )
 
 implementation <- plot_ly(progress, y = ~type, x = ~Y2019, type = 'bar', name = '2019', marker=list(color='rgb(252,141,98)'),texttemplate='%{value}%')
@@ -553,15 +555,15 @@ policytable <- tribble(
 "American Chemical Society",47,2021,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,"FORM",FALSE,TRUE,FALSE,FALSE,"Acknowledges that it does not currently update citations but mentions working towards being able to do so in the future.",
 "American Psychological Association",42,2020,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,FALSE,NA,FALSE,NA,
 "Royal Society of Chemistry",27,2020,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,"EMAIL",TRUE,TRUE,FALSE,FALSE,NA,
-"Mary Ann Liebert",16,NA,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,"EMAIL",FALSE,FALSE,NA,FALSE,NA,
-"American Medical Association",14,NA,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,NA,FALSE,TRUE,NA,FALSE,NA,
+"Mary Ann Liebert",16,2022,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,"EMAIL",FALSE,FALSE,NA,FALSE,NA,
+"American Medical Association",14,2022,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,NA,FALSE,TRUE,NA,FALSE,NA,
 "IOP Publishing",14,2021,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,"FORM",FALSE,TRUE,FALSE,FALSE,NA,
 "Association for Computing Machinery",12,2019,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,"EMAIL",TRUE,TRUE,TRUE,FALSE,"Will only update citations in ACM publications",
-"MIT Press",10,NA,NA,FALSE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,FALSE,NA,FALSE,NA,
+"MIT Press",10,2022,NA,FALSE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,FALSE,NA,FALSE,NA,
 "Ubiquity Press",10,2021,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,"FORM",TRUE,TRUE,TRUE,TRUE,"Only offers updating citations within the articles in question.",
 "American Institute of Physics",9,2021,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,FALSE,FALSE,"Acknowledges that it does not currently update citations but mentions working towards being able to do so in the future.",
 "Public Library of Science (PLoS)",9,2020,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,NA,TRUE,"Policy mentions COPE generally but does not cite the name change policy guidance.",
-"EDP Sciences",8,NA,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,"EMAIL",FALSE,TRUE,FALSE,TRUE,NA,
+"EDP Sciences",8,2021,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,"EMAIL",FALSE,TRUE,FALSE,TRUE,NA,
 "Future Science Group",8,2021,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,NA,FALSE,NA,
 "American Physiological Society",6,2021,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,NA,FALSE,NA,
 "Company of Biologists",5,2021,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,"EMAIL",TRUE,TRUE,NA,FALSE,NA,
@@ -572,9 +574,9 @@ policytable <- tribble(
 "American Society for Microbiology",2,2020,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,"EMAIL",FALSE,TRUE,FALSE,FALSE,NA,
 "IOS Press",2,NA, FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,"FORM",FALSE,FALSE,NA,TRUE,NA,
 "PeerJ Publishing",2,2021,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,NA,FALSE,NA,
-"Radiological Society of North America",2,NA,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,"EMAIL",FALSE,TRUE,NA,FALSE,NA,
-"Royal Society",2,NA,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,"EMAIL",TRUE,TRUE,NA,FALSE,NA,
-"Wellcome Trust",2,2020,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,"EMAIL",TRUE,TRUE,NA,FALSE,NA,
+"Radiological Society of North America",2,2022,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,"EMAIL",FALSE,TRUE,NA,FALSE,NA,
+"Royal Society",2,2021,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,"EMAIL",TRUE,TRUE,NA,FALSE,NA,
+"Wellcome Trust",2,NA,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,"EMAIL",TRUE,TRUE,NA,FALSE,NA,
 "eLife Sciences Publications",1,2020,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,"EMAIL",FALSE,TRUE,FALSE,FALSE,NA
 )
 
