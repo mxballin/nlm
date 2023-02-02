@@ -191,7 +191,6 @@ haspolicypie
 
 ```{r}
 #| echo: false
-#| warning: false
 top10<- tribble(
   ~publisher,~journals,~policy,
 "Elsevier",1365,TRUE,
@@ -227,6 +226,7 @@ brewer.pal(11,"PuOr")
 ```
 
 ```{r}
+#| warning: false
 #| echo: false
 top10tree <- plot_ly(
   type='treemap',
