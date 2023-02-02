@@ -458,13 +458,21 @@ Unique features of certain policies
 
     -   More options = more freedom?
 
-        -   Two pronged approaches
+        -   Author linked data
 
-            -   
+            -   One author entry (current name replaces deadname)
 
-        -   Three pronged approaches
+            -   Linked author entries (allowing for discovery based on deadname)
 
-            -   
+            -   Unattached authorship (no association between deadname and current name)
+
+        -   Option to publish general note
+
+            -   Correction asking citers to ensure correct citation, noting that a name has changed but not indicating whose
+
+        -   Contacting co-authors/corresponding authors
+
+            -   Most leave any contact up to the author indepdendently, but some offer to be the contacter and a few require that the corresponding author be contacted in order for the article to be changed.
 
     -   Are librarians prepared to address this in our own information architecture?
 
@@ -480,11 +488,11 @@ Lack of alignment with underlying principles
 
 -   Lack of clear instructions and ambiguity of what will and won't be changed might make it seem like an open policy, but it also leaves a lot of potential anxiety and unknowns around how a name change request that asks for more than a name will be received by the publisher
 
--   Contact of co-authors/corresponding authors
-
-    -   Most publishers mention it
+    -   Problem publishers include: MIT and IOS Press
 
 -   Inclusion of mention of data retention - ultimate transparency
+
+    -   Helps authors to understand the process of data distribution? Most mention it is possible that 3rd party indexers might have their own policy/that they have no control over when those update, but how clear is it to someone who doesn't understand the publishing process? Need for better transparency on 3rd party indexers' end?
 
 How can medical librarians prepare scholars who are looking to change the version of record and also how can they advocate for inclusive policies
 
