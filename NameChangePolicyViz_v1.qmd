@@ -63,7 +63,7 @@ A total of 39 publishers were identified as having some form of name change poli
 
 ### Policy Features
 
-Once the publishers with policies were identified, they underwent a content analysis that was based in the principles put forth by the NCWG.
+Once the publishers with policies were identified, they underwent a content analysis that was based on the principles put forth by the NCWG.
 
 Each policy was read at least twice and assessed for their adherence to concepts of accessibility, comprehensiveness, invisibility, expediency and simplicity, and recurrence and maintenance.
 
@@ -101,7 +101,9 @@ What emerged from this analysis was the identification of common features that w
 
 ### Policy Analysis
 
-Following data collection, findings were collected and tallied in a single spreadsheet. Using xxxx, corresponding journal totals for each publisher were identified and added to the spreadsheet to be included as part of the analysis.
+Following policy related data collection, findings were collected and tallied in a single spreadsheet. Using xxxx data provided by the, corresponding journal totals for each publisher were identified and added to the spreadsheet to be included as part of the analysis.
+
+A total of 6267 journals were included as part of the data.
 
 Data analysis and visualization were performed in Microsoft Excel and R.
 
@@ -400,6 +402,12 @@ implementation
 ```
 
 ## Discussion
+
+## Limitations
+
+## Conflicts of Interest
+
+## Acknowledgement
 
 ## Bibliography
 
