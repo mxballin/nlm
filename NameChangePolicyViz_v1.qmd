@@ -19,17 +19,17 @@ In 2021, the Trans Name Change Policy Working Group (NCPWG) authored a article f
 
 The principles discussed in the article are as follows:
 
--   Accessibility - *Name changes should be available to authors upon request without legal documentation, unnecessary barriers, burdens, or labor placed upon the author making the request.*
-
--   Comprehensiveness - *Name changes should remove all instances of an author\'s previous name from the records maintained and disseminated by the publisher.*
-
--   Invisibility - *Name changes should not draw attention to the gender identity of an author, nor create a clear juxtaposition between the current name and the previous name.*
-
--   Expediency and Simplicity - *Name changes should be implemented in a timely manner, and with a minimum of bureaucratic overhead.*
-
--   Recurrence and Maintenance - *Publishers should regularly audit and correct new instances of changed names in order to prevent ongoing dissemination of incorrect information.*
-
-    (Tannenbaum et al, 2021).
+> Accessibility - Name changes should be available to authors upon request without legal documentation, unnecessary barriers, burdens, or labor placed upon the author making the request.
+>
+> Comprehensiveness - Name changes should remove all instances of an author\'s previous name from the records maintained and disseminated by the publisher.
+>
+> Invisibility - Name changes should not draw attention to the gender identity of an author, nor create a clear juxtaposition between the current name and the previous name.
+>
+> Expediency and Simplicity - Name changes should be implemented in a timely manner, and with a minimum of bureaucratic overhead.
+>
+> Recurrence and Maintenance - Publishers should regularly audit and correct new instances of changed names in order to prevent ongoing dissemination of incorrect information.
+>
+> (Tannenbaum et al, 2021)
 
 While both the COPE and the National Information Standards Organization (NISO) formed working groups to develop recommended practice in relation to the changing of author names post-publication in the academic record, neither group has released official recommendations as of the beginning of 2023. Still, the past three years have seen a proliferation of publisher-driven development of name change policies for their journals.
 
@@ -37,68 +37,98 @@ With the growing presence of name change policies in mind, this paper seeks to b
 
 ## Methodology
 
-```{r}
-#| echo: false
-top10<- tribble(
-  ~publisher,~journals,~policy,
-"Elsevier",1365,"y",
-"Wiley",1023,"y",
-"SpringerNature",512,"y",
-"Oxford",	339,"y",
-"Sage",	144,"y",
-"Karger",	134,"n",
-"Lippincott",	128,"y",
-"Bentham",	97,"n",
-"IEEE",	93,"y",
-"Dove",73,"y")
+### Scope
 
-top10
-```
+The data acquired for analysis for this survey focuses on the content of indexed in PubMed (including Medline) and the full-text database PubMed Central. It was acquired through querying the National Center for Biotechnology Information's xxxxxxx for data providing entities that contribute to the service. These data providers can be publishing companies as well as \[Silverchair, etc.\]
 
-```{r}
-#| echo: false
-top10tree <- plot_ly(
-  type='treemap',
-  labels=c("Has Policy", "Other Publishers (With Policy)", "Elsevier" ,      "Wiley"    ,      "Springer Nature", "Oxford"     ,    "Sage"    ,       "Karger" ,     "Lippincott"  ,   "Bentham"    ,    "IEEE"     ,      "Dove"     ,      "Other Publishers (No Policy)", "No Policy"  ),
-  parents=c("", "Has Policy", "Has Policy", "Has Policy", "Has Policy" ,"Has Policy", "Has Policy", "No Policy", "Has Policy" ,"No Policy" ,"Has Policy", "Has Policy", "No Policy",""),
-    values=c(0,573,1365, 1023 , 512  ,339,  144 , 134 , 128,   97  , 93,   73,1786,0),
-  textinfo="label+value"
-)
+In order to create a more manageable search and to reflect the researcher's linguistic capabilities, the list of publishers to search was limited to those that included English in their names. The list was also limited to current contributors of citations to the PubMed landscape. Lastly, publishers that provided data separately but are members of a publishing group or are a subsidiary of a larger publisher that provides data to PubMed were combined into their larger body with the assumption that policies at the higher level apply to their subsidiaries.
 
-top10tree
-```
+A total of 931 publishing bodies were included as part of the data.
 
-```{r}
-#| echo: false
-publishertree <- plot_ly(
-  type='treemap',
-  labels=c("Has Policy", "Other Publishers (With Policy)", "Elsevier" ,      "Wiley"    ,      "Springer Nature", "Oxford"     ,    "Sage"    ,       "Karger" ,     "Lippincott"  ,   "Bentham"    ,    "IEEE"     ,      "Dove"     ,      "Other Publishers (No Policy)", "No Policy"  ),
-  parents=c("", "Has Policy", "Has Policy", "Has Policy", "Has Policy" ,"Has Policy", "Has Policy", "No Policy", "Has Policy" ,"No Policy" ,"Has Policy", "Has Policy", "No Policy",""),
-    values=c(0,573,1365, 1023 , 512  ,339,  144 , 134 , 128,   97  , 93,   73,1786,0),
-  textinfo="label+value"
-)
+### Policy Identification
 
-top10tree
-```
+Following the identification of publishers included in PubMed, a search was conducted for whether each publisher has published a name change policy.
+
+The process for searching for these policies involved the identification of a search string that would effectively identify a publisher's policy page if extant and the use of the string for every publisher. The terms that were selected were the publishers name, "journal," and "name change policy."
+
+In the Google search browser, executed searches share the same URL format, varying only in the text to be searched. To streamline the process of conducting the search for each publisher, once the terms to be added to the search were identified, OpenRefine was used to take the names of each publisher and include them in a URL that would lead to the search results.
+
+After the URLs were created, they were opened by hand and the results of the search were cataloged for later analysis.
+
+In acknowledgement of the fact that not all policies include the phrase "name change policy" in their documentation, if no results were returned as part of the initial search results, the publisher was added to a list for secondary searching. In addition to no-result publishers, following the initial identification of publishing bodies with name change policies, additional publishers were added to this secondary searching list in coordination with the PubMed team based on the weighted presence of publishers in PubMed. Following the creation of this secondary list, one new search strings was created to attempt to identify the possible presence of a policy: publishers name, "author name" AND "policy." In addition to this search string, the policy webpages of these publishers were hand searched for potential policies.
+
+A total of 39 publishers were identified as having some form of name change policy.
+
+### Policy Features
+
+Once the publishers with policies were identified, they underwent a content analysis that was based in the principles put forth by the NCWG.
+
+Each policy was read at least twice and assessed for their adherence to concepts of accessibility, comprehensiveness, invisibility, expediency and simplicity, and recurrence and maintenance.
+
+What emerged from this analysis was the identification of common features that were included in these policies, which then became the basis for the criteria chosen to compare the policies as part of this work. The criteria documented about the policies are as follows:
+
+**Invisibility**
+
+-   Invisible Option - Does the publisher offer the ability to change an author's name without the publication of an erratum, correction, or other type of notice?
+
+-   Mention of co-authors or corresponding authors - Does the publisher mention the contacting of co-authors or corresponding authors? If so, is it a requirement that someone outside of the author and the publisher themselves be contacted?
+
+**Comprehensiveness**
+
+-   Pronouns - Does the policy include mention of the ability to change pronouns?
+
+-   Photos - Does the policy include mention of the ability to change associated photos?
+
+-   Email - Does the policy include mention of the ability to change associated email?
+
+**Expediency and Simplicity**
+
+-   Proof of Change - Does the publisher require proof of name change?
+
+-   Confirmation of Identify - Does the publisher require proof of identify? If so, to what level of proof do they require?
+
+-   Method of request - How does the publisher require the author to initiate a name change?
+
+**Recurrence and maintenance**
+
+-   Mention of the Internal Retention of Data - Does the publisher mention whether or not the initial name under which the article was published will be retained in their data or not?
+
+-   Updating past citations - Does the publisher mention/offer to update past citations of the paper to reflect the new name?
+
+-   Provision of updated data to indexing services - Does the publisher mention whether they will reserve the article's data to indexing services?
+
+### Policy Analysis
+
+Following data collection, findings were collected and tallied in a single spreadsheet. Using xxxx, corresponding journal totals for each publisher were identified and added to the spreadsheet to be included as part of the analysis.
+
+## Findings
+
+### Policy Pervasiveness
 
 ```{r}
 #| echo: false
 policyfeatures <- tribble(
 ~category, ~journals,	~publishers,
-"Total",	6267,	933,
-"No Policy",	2017,	894,
+"Total",	6267,	931,
+"No Policy",	2017,	892,
 "Has Policy",	4250,	39,
 "Invisible Option",	4238,	37,
-"Databases",	4136,	35,
 "Co-authors",	1768,	26,
 "Pronouns",	992,	16,
+"Photos",	105,	7,
 "Email",	272,	11,
 "ID Confirmation",	347,	11,
+"Email to Update",3141,26,
+"Form to Update",450,9,
+"Insufficient update instructions",659,4,
 "Internal Data Retention",	274,	10,
-"Photos",	105,	7)
-
-policyfeatures
-
+"Databases",	4120,	34,
+"Updates In-House Publication Citations",115,3,
+"Notes No Citation Update",330,9,
+"Mentions Future Citation Goals",200,3,
+"Mentions COPE Name Change Guidelines",3157,8,
+"Mentions COPE",3558,11
+)
 ```
 
 ```{r}
@@ -153,7 +183,42 @@ haspolicypie
 
 ```{r}
 #| echo: false
-policyfeatures_bar <- policyfeatures%>% slice(4:11)
+top10<- tribble(
+  ~publisher,~journals,~policy,
+"Elsevier",1365,"y",
+"Wiley",1023,"y",
+"SpringerNature",512,"y",
+"Oxford",	339,"y",
+"Sage",	144,"y",
+"Karger",	134,"n",
+"Lippincott",	128,"y",
+"Bentham",	97,"n",
+"IEEE",	93,"y",
+"Dove",73,"y")
+
+top10
+```
+
+```{r}
+#| echo: false
+top10tree <- plot_ly(
+  type='treemap',
+  labels=c("Has Policy", "Other Publishers (With Policy)", "Elsevier" ,      "Wiley"    ,      "Springer Nature", "Oxford"     ,    "Sage"    ,       "Karger" ,     "Lippincott"  ,   "Bentham"    ,    "IEEE"     ,      "Dove"     ,      "Other Publishers (No Policy)", "No Policy"  ),
+  parents=c("", "Has Policy", "Has Policy", "Has Policy", "Has Policy" ,"Has Policy", "Has Policy", "No Policy", "Has Policy" ,"No Policy" ,"Has Policy", "Has Policy", "No Policy",""),
+    values=c(0,573,1365, 1023 , 512  ,339,  144 , 134 , 128,   97  , 93,   73,1786,0),
+  textinfo="label+value"
+)
+
+top10tree
+```
+
+### Policy Features
+
+#### Invisibility
+
+```{r}
+#| echo: false
+policyfeatures_bar<- policyfeatures%>% slice(4:5)
 fig1 <-  plot_ly(policyfeatures_bar,
                  y=~category,
                  x=~journals,
@@ -167,7 +232,7 @@ fig2 <- plot_ly(policyfeatures_bar,
                 name='Publishers',
                 texttemplate="%{label}: %{value}")
 fig <- subplot(fig1,fig2)%>%
-  layout(title="Comparing Journal vs Publisher Policy Feature Frequency",
+  layout(title="Comparing Journal vs Publisher Policy Feature Frequency:<br>Invisibility",
          yaxis = list(
                      zerolinecolor = '#ffff',
                      zerolinewidth = 2,
@@ -181,6 +246,107 @@ fig <- subplot(fig1,fig2)%>%
 
 fig
 ```
+
+#### Comprehensiveness
+
+```{r}
+#| echo: false
+policyfeatures_comp<- policyfeatures%>% slice(6:8)
+fig7 <-  plot_ly(policyfeatures_comp,
+                 y=~category,
+                 x=~journals,
+                 type='bar',
+                 name='Journals',
+                 texttemplate="%{label}: %{value}")
+fig8 <- plot_ly(policyfeatures_bar,
+                y=~category,
+                x=~publishers,
+                type='bar',
+                name='Publishers',
+                texttemplate="%{label}: %{value}")
+comprehensiveness <- subplot(fig7,fig8)%>%
+  layout(title="Comparing Journal vs Publisher Policy Feature Frequency:<br> Comprehensiveness",
+         yaxis = list(
+                     zerolinecolor = '#ffff',
+                     zerolinewidth = 2,
+                     gridcolor = 'ffff',
+                     showticklabels=FALSE),
+                  yaxis2 = list(
+                     zerolinecolor = '#ffff',
+                     zerolinewidth = 2,
+                     gridcolor = 'ffff',
+                     showticklabels=FALSE))
+
+comprehensiveness
+```
+
+#### Expediency and Simplicity
+
+```{r}
+#| echo: false
+policyfeatures_exp<- policyfeatures%>% slice(10:12)
+fig3 <-  plot_ly(policyfeatures_exp,
+                 y=~category,
+                 x=~journals,
+                 type='bar',
+                 name='Journals',
+                 texttemplate="%{label}: %{value}")
+fig4 <- plot_ly(policyfeatures_bar,
+                y=~category,
+                x=~publishers,
+                type='bar',
+                name='Publishers',
+                texttemplate="%{label}: %{value}")
+expediency <- subplot(fig3,fig4)%>%
+  layout(title="Comparing Journal vs Publisher Policy Feature Frequency:<br>Expediency and Simplicity",
+         yaxis = list(
+                     zerolinecolor = '#ffff',
+                     zerolinewidth = 2,
+                     gridcolor = 'ffff',
+                     showticklabels=FALSE),
+                  yaxis2 = list(
+                     zerolinecolor = '#ffff',
+                     zerolinewidth = 2,
+                     gridcolor = 'ffff',
+                     showticklabels=FALSE))
+
+expediency
+```
+
+#### Recurrence and Maintenance
+
+```{r}
+#| echo: false
+policyfeatures_rec<- policyfeatures%>% slice(13:15)
+fig5<-  plot_ly(policyfeatures_rec,
+                 y=~category,
+                 x=~journals,
+                 type='bar',
+                 name='Journals',
+                 texttemplate="%{label}: %{value}")
+fig6 <- plot_ly(policyfeatures_rec,
+                y=~category,
+                x=~publishers,
+                type='bar',
+                name='Publishers',
+                texttemplate="%{label}: %{value}")
+recurrence <- subplot(fig5,fig6)%>%
+  layout(title="Comparing Journal vs Publisher Policy Feature Frequency:<br>Recurrence and Maintenance",
+         yaxis = list(
+                     zerolinecolor = '#ffff',
+                     zerolinewidth = 2,
+                     gridcolor = 'ffff',
+                     showticklabels=FALSE),
+                  yaxis2 = list(
+                     zerolinecolor = '#ffff',
+                     zerolinewidth = 2,
+                     gridcolor = 'ffff',
+                     showticklabels=FALSE))
+
+recurrence
+```
+
+### Policies Over Time
 
 ```{r}
 #| echo: false
@@ -211,8 +377,13 @@ implementation <- implementation %>% add_trace(x = ~Y2021, name = '2021')
 implementation <- implementation %>% add_trace(x=~Y2022, name="2022")
 implementation <- implementation %>% add_trace(x=~unknown, name='unknown date')
 implementation <- implementation %>% layout(title = "Policy Implementation Coverage by Year",
-  xaxis = list(title = 'Percent of Corpus'), barmode = 'stack')
+  yaxis= list(title=''),
+  xaxis = list(title = 'Percent of Policy-Applicable Corpus'), barmode = 'stack')
 
 
 implementation
 ```
+
+## Discussion
+
+## Bibliography
