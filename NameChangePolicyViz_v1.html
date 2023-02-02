@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -138,6 +201,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="policy-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="policy-analysis">Policy Analysis</h3>
 <p>Following data collection, findings were collected and tallied in a single spreadsheet. Using xxxx, corresponding journal totals for each publisher were identified and added to the spreadsheet to be included as part of the analysis.</p>
+<p>Data analysis and visualization were performed in Microsoft Excel and R.</p>
 </section>
 </section>
 <section id="findings" class="level2">
@@ -149,31 +213,211 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d172d704e2cda0ef156d" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-d172d704e2cda0ef156d">{"x":{"visdat":{"56043fec1ec6":["function () ","plotlyVisDat"]},"cur_data":"56043fec1ec6","attrs":{"56043fec1ec6":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"values":[2017,4250],"labels":["No Policy","Has Policy"],"type":"pie","name":"Journals","domain":{"row":0,"column":0},"textinfo":"percent","inherit":true},"56043fec1ec6.1":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"values":[894,39],"labels":["No Policy","Has Policy"],"type":"pie","name":"Publishers","domain":{"row":0,"column":1},"textinfo":"percent","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Status of Name Change Policies <br> Applying to Journals and Corresponding Publishers <br> in PubMed","showlegend":true,"grid":{"rows":1,"columns":2},"xaxis":{"showgrid":false,"zeroline":false,"showticklabels":false},"yaxis":{"showgrid":false,"zeroline":false,"showticklabels":false},"annotations":[{"x":0.23,"y":0.1,"text":"Journals","xref":"paper","yref":"paper","xanchor":"center","yanchor":"bottom","showarrow":false},{"x":0.76,"y":0.1,"text":"Publishers","xref":"paper","yref":"paper","xanchor":"center","yanchor":"bottom","showarrow":false}],"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"values":[2017,4250],"labels":["No Policy","Has Policy"],"type":"pie","name":"Journals","domain":{"row":0,"column":0},"textinfo":"percent","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(255,255,255,1)"}},"frame":null},{"values":[894,39],"labels":["No Policy","Has Policy"],"type":"pie","name":"Publishers","domain":{"row":0,"column":1},"textinfo":"percent","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,255,255,1)"}},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 10 × 3
-   publisher      journals policy
-   &lt;chr&gt;             &lt;dbl&gt; &lt;chr&gt; 
- 1 Elsevier           1365 y     
- 2 Wiley              1023 y     
- 3 SpringerNature      512 y     
- 4 Oxford              339 y     
- 5 Sage                144 y     
- 6 Karger              134 n     
- 7 Lippincott          128 y     
- 8 Bentham              97 n     
- 9 IEEE                 93 y     
-10 Dove                 73 y     </code></pre>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-0e4497623010831ae879" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-0e4497623010831ae879">{"x":{"visdat":{"24f4e98228e":["function () ","plotlyVisDat"]},"cur_data":"24f4e98228e","attrs":{"24f4e98228e":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"values":[2017,4250],"labels":["No Policy","Has Policy"],"type":"pie","name":"Journals","domain":{"row":0,"column":0},"textinfo":"percent","inherit":true},"24f4e98228e.1":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"values":[894,39],"labels":["No Policy","Has Policy"],"type":"pie","name":"Publishers","domain":{"row":0,"column":1},"textinfo":"percent","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Status of Name Change Policies <br> Applying to Journals and Corresponding Publishers <br> in PubMed","showlegend":true,"grid":{"rows":1,"columns":2},"xaxis":{"showgrid":false,"zeroline":false,"showticklabels":false},"yaxis":{"showgrid":false,"zeroline":false,"showticklabels":false},"annotations":[{"x":0.23,"y":0.1,"text":"Journals","xref":"paper","yref":"paper","xanchor":"center","yanchor":"bottom","showarrow":false},{"x":0.76,"y":0.1,"text":"Publishers","xref":"paper","yref":"paper","xanchor":"center","yanchor":"bottom","showarrow":false}],"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"values":[2017,4250],"labels":["No Policy","Has Policy"],"type":"pie","name":"Journals","domain":{"row":0,"column":0},"textinfo":"percent","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(255,255,255,1)"}},"frame":null},{"values":[894,39],"labels":["No Policy","Has Policy"],"type":"pie","name":"Publishers","domain":{"row":0,"column":1},"textinfo":"percent","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,255,255,1)"}},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-9bcab73017d261591b57" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-9bcab73017d261591b57">{"x":{"visdat":{"5604a84b39":["function () ","plotlyVisDat"]},"cur_data":"5604a84b39","attrs":{"5604a84b39":{"labels":["Has Policy","Other Publishers (With Policy)","Elsevier","Wiley","Springer Nature","Oxford","Sage","Karger","Lippincott","Bentham","IEEE","Dove","Other Publishers (No Policy)","No Policy"],"parents":["","Has Policy","Has Policy","Has Policy","Has Policy","Has Policy","Has Policy","No Policy","Has Policy","No Policy","Has Policy","Has Policy","No Policy",""],"values":[0,573,1365,1023,512,339,144,134,128,97,93,73,1786,0],"textinfo":"label+value","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"treemap"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"labels":["Has Policy","Other Publishers (With Policy)","Elsevier","Wiley","Springer Nature","Oxford","Sage","Karger","Lippincott","Bentham","IEEE","Dove","Other Publishers (No Policy)","No Policy"],"parents":["","Has Policy","Has Policy","Has Policy","Has Policy","Has Policy","Has Policy","No Policy","Has Policy","No Policy","Has Policy","Has Policy","No Policy",""],"values":[0,573,1365,1023,512,339,144,134,128,97,93,73,1786,0],"textinfo":"label+value","type":"treemap","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(255,255,255,1)"}},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+
+<table class="table table-condensed">
+<thead>
+<tr>
+<th style="text-align:left;">
+publisher
+</th>
+<th style="text-align:right;">
+journals
+</th>
+<th style="text-align:right;">
+policy
+</th>
+<th style="text-align:right;">
+percent
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Elsevier
+</td>
+<td style="text-align:right;">
+1365
+</td>
+<td style="text-align:right;">
+<span style="font-weight: bold; color: forestgreen">TRUE</span>
+</td>
+<td style="text-align:right;">
+21.78%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Wiley
+</td>
+<td style="text-align:right;">
+1023
+</td>
+<td style="text-align:right;">
+<span style="font-weight: bold; color: forestgreen">TRUE</span>
+</td>
+<td style="text-align:right;">
+16.32%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SpringerNature
+</td>
+<td style="text-align:right;">
+512
+</td>
+<td style="text-align:right;">
+<span style="font-weight: bold; color: forestgreen">TRUE</span>
+</td>
+<td style="text-align:right;">
+8.17%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Oxford
+</td>
+<td style="text-align:right;">
+339
+</td>
+<td style="text-align:right;">
+<span style="font-weight: bold; color: forestgreen">TRUE</span>
+</td>
+<td style="text-align:right;">
+5.41%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sage
+</td>
+<td style="text-align:right;">
+144
+</td>
+<td style="text-align:right;">
+<span style="font-weight: bold; color: forestgreen">TRUE</span>
+</td>
+<td style="text-align:right;">
+2.30%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Karger
+</td>
+<td style="text-align:right;">
+134
+</td>
+<td style="text-align:right;">
+<span style="font-weight: bold; color: red">FALSE</span>
+</td>
+<td style="text-align:right;">
+2.14%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lippincott
+</td>
+<td style="text-align:right;">
+128
+</td>
+<td style="text-align:right;">
+<span style="font-weight: bold; color: forestgreen">TRUE</span>
+</td>
+<td style="text-align:right;">
+2.04%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bentham
+</td>
+<td style="text-align:right;">
+97
+</td>
+<td style="text-align:right;">
+<span style="font-weight: bold; color: red">FALSE</span>
+</td>
+<td style="text-align:right;">
+1.55%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IEEE
+</td>
+<td style="text-align:right;">
+93
+</td>
+<td style="text-align:right;">
+<span style="font-weight: bold; color: forestgreen">TRUE</span>
+</td>
+<td style="text-align:right;">
+1.48%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dove
+</td>
+<td style="text-align:right;">
+73
+</td>
+<td style="text-align:right;">
+<span style="font-weight: bold; color: forestgreen">TRUE</span>
+</td>
+<td style="text-align:right;">
+1.16%
+</td>
+</tr>
+</tbody>
+
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-35a33d2efea71b490eb7" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-35a33d2efea71b490eb7">{"x":{"visdat":{"24f44430401d":["function () ","plotlyVisDat"]},"cur_data":"24f44430401d","attrs":{"24f44430401d":{"labels":["Has Policy","Other Publishers (With Policy)","Elsevier","Wiley","Springer Nature","Oxford","Sage","Karger","Lippincott","Bentham","IEEE","Dove","Other Publishers (No Policy)","No Policy"],"parents":["","Has Policy","Has Policy","Has Policy","Has Policy","Has Policy","Has Policy","No Policy","Has Policy","No Policy","Has Policy","Has Policy","No Policy",""],"values":[0,573,1365,1023,512,339,144,134,128,97,93,73,1786,0],"textinfo":"label+value","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"treemap"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"labels":["Has Policy","Other Publishers (With Policy)","Elsevier","Wiley","Springer Nature","Oxford","Sage","Karger","Lippincott","Bentham","IEEE","Dove","Other Publishers (No Policy)","No Policy"],"parents":["","Has Policy","Has Policy","Has Policy","Has Policy","Has Policy","Has Policy","No Policy","Has Policy","No Policy","Has Policy","Has Policy","No Policy",""],"values":[0,573,1365,1023,512,339,144,134,128,97,93,73,1786,0],"textinfo":"label+value","type":"treemap","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(255,255,255,1)"}},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>policytable <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="sc">~</span><span class="st">"Name"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="sc">~</span><span class="st">"Date Instigated"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="sc">~</span><span class="st">"Invisible Option"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="sc">~</span><span class="st">"Co-authors"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="sc">~</span><span class="st">"Pronouns"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="sc">~</span><span class="st">"Photos"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="sc">~</span><span class="st">"Email"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="sc">~</span><span class="st">"ID Confirmation"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="sc">~</span><span class="st">"Update Format"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="sc">~</span><span class="st">"Internal Data Retention"</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="sc">~</span><span class="st">"Databases"</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="sc">~</span><span class="st">"Citation Updates"</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="sc">~</span><span class="st">"Mentions COPE"</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="sc">~</span><span class="st">"Notes"</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="st">"Elsevier"</span>,<span class="dv">2021</span>,<span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="cn">FALSE</span>,<span class="cn">FALSE</span>,<span class="st">"Email"</span>,<span class="cn">FALSE</span>,<span class="cn">TRUE</span>,<span class="cn">FALSE</span>,<span class="cn">FALSE</span>,<span class="cn">NA</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>policytable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 14
+  Name     Date I…¹ Invis…² Co-au…³ Prono…⁴ Photos Email ID Co…⁵ Updat…⁶ Inter…⁷
+  &lt;chr&gt;       &lt;dbl&gt; &lt;lgl&gt;   &lt;lgl&gt;   &lt;lgl&gt;   &lt;lgl&gt;  &lt;lgl&gt; &lt;lgl&gt;   &lt;chr&gt;   &lt;lgl&gt;  
+1 Elsevier     2021 TRUE    FALSE   TRUE    FALSE  FALSE FALSE   Email   FALSE  
+# … with 4 more variables: Databases &lt;lgl&gt;, `Citation Updates` &lt;lgl&gt;,
+#   `Mentions COPE` &lt;lgl&gt;, Notes &lt;lgl&gt;, and abbreviated variable names
+#   ¹​`Date Instigated`, ²​`Invisible Option`, ³​`Co-authors`, ⁴​Pronouns,
+#   ⁵​`ID Confirmation`, ⁶​`Update Format`, ⁷​`Internal Data Retention`</code></pre>
 </div>
 </div>
 </section>
@@ -183,8 +427,8 @@ ul.task-list li input[type="checkbox"] {
 <h4 class="anchored" data-anchor-id="invisibility">Invisibility</h4>
 <div class="cell">
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-519adc4fb16f0946b30a" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-519adc4fb16f0946b30a">{"x":{"data":[{"y":["Invisible Option","Co-authors"],"x":[4238,1768],"texttemplate":["%{label}: %{value}","%{label}: %{value}"],"name":"Journals","type":"bar","orientation":"h","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":["Invisible Option","Co-authors"],"x":[37,26],"texttemplate":["%{label}: %{value}","%{label}: %{value}"],"name":"Publishers","type":"bar","orientation":"h","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x2","yaxis":"y2","frame":null}],"layout":{"xaxis":{"domain":[0,0.48],"automargin":true,"anchor":"y"},"xaxis2":{"domain":[0.52,1],"automargin":true,"anchor":"y2"},"yaxis2":{"domain":[0,1],"automargin":true,"type":"category","categoryorder":"array","categoryarray":["Co-authors","Invisible Option"],"anchor":"x2","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff","showticklabels":false},"yaxis":{"domain":[0,1],"automargin":true,"type":"category","categoryorder":"array","categoryarray":["Co-authors","Invisible Option"],"anchor":"x","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff","showticklabels":false},"annotations":[],"shapes":[],"images":[],"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":true,"title":"Comparing Journal vs Publisher Policy Feature Frequency:<br>Invisibility"},"attrs":{"5604170238dd":{"y":{},"x":{},"texttemplate":"%{label}: %{value}","name":"Journals","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"560448465ad6":{"y":{},"x":{},"texttemplate":"%{label}: %{value}","name":"Publishers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"subplot":true,"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5dd4036f427957cfc3cf" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-5dd4036f427957cfc3cf">{"x":{"data":[{"y":["Invisible Option","Co-authors"],"x":[4238,1768],"texttemplate":["%{label}: %{value}","%{label}: %{value}"],"name":"Journals","type":"bar","orientation":"h","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":["Invisible Option","Co-authors"],"x":[37,26],"texttemplate":["%{label}: %{value}","%{label}: %{value}"],"name":"Publishers","type":"bar","orientation":"h","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x2","yaxis":"y2","frame":null}],"layout":{"xaxis":{"domain":[0,0.48],"automargin":true,"anchor":"y"},"xaxis2":{"domain":[0.52,1],"automargin":true,"anchor":"y2"},"yaxis2":{"domain":[0,1],"automargin":true,"type":"category","categoryorder":"array","categoryarray":["Co-authors","Invisible Option"],"anchor":"x2","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff","showticklabels":false},"yaxis":{"domain":[0,1],"automargin":true,"type":"category","categoryorder":"array","categoryarray":["Co-authors","Invisible Option"],"anchor":"x","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff","showticklabels":false},"annotations":[],"shapes":[],"images":[],"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":true,"title":"Comparing Journal vs Publisher Policy Feature Frequency:<br>Invisibility"},"attrs":{"24f47c544c12":{"y":{},"x":{},"texttemplate":"%{label}: %{value}","name":"Journals","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"24f439394f60":{"y":{},"x":{},"texttemplate":"%{label}: %{value}","name":"Publishers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"subplot":true,"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -192,8 +436,8 @@ ul.task-list li input[type="checkbox"] {
 <h4 class="anchored" data-anchor-id="comprehensiveness">Comprehensiveness</h4>
 <div class="cell">
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-cbff32b627a7b6c60f94" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-cbff32b627a7b6c60f94">{"x":{"data":[{"y":["Pronouns","Photos","Email"],"x":[992,105,272],"texttemplate":["%{label}: %{value}","%{label}: %{value}","%{label}: %{value}"],"name":"Journals","type":"bar","orientation":"h","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":["Invisible Option","Co-authors"],"x":[37,26],"texttemplate":["%{label}: %{value}","%{label}: %{value}"],"name":"Publishers","type":"bar","orientation":"h","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x2","yaxis":"y2","frame":null}],"layout":{"xaxis":{"domain":[0,0.48],"automargin":true,"anchor":"y"},"xaxis2":{"domain":[0.52,1],"automargin":true,"anchor":"y2"},"yaxis2":{"domain":[0,1],"automargin":true,"type":"category","categoryorder":"array","categoryarray":["Co-authors","Invisible Option"],"anchor":"x2","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff","showticklabels":false},"yaxis":{"domain":[0,1],"automargin":true,"type":"category","categoryorder":"array","categoryarray":["Email","Photos","Pronouns"],"anchor":"x","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff","showticklabels":false},"annotations":[],"shapes":[],"images":[],"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":true,"title":"Comparing Journal vs Publisher Policy Feature Frequency:<br> Comprehensiveness"},"attrs":{"56043afd4432":{"y":{},"x":{},"texttemplate":"%{label}: %{value}","name":"Journals","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"56042fdf5dd3":{"y":{},"x":{},"texttemplate":"%{label}: %{value}","name":"Publishers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"subplot":true,"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b38dc96d55bb1775bb19" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-b38dc96d55bb1775bb19">{"x":{"data":[{"y":["Pronouns","Photos","Email"],"x":[992,105,272],"texttemplate":["%{label}: %{value}","%{label}: %{value}","%{label}: %{value}"],"name":"Journals","type":"bar","orientation":"h","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":["Invisible Option","Co-authors"],"x":[37,26],"texttemplate":["%{label}: %{value}","%{label}: %{value}"],"name":"Publishers","type":"bar","orientation":"h","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x2","yaxis":"y2","frame":null}],"layout":{"xaxis":{"domain":[0,0.48],"automargin":true,"anchor":"y"},"xaxis2":{"domain":[0.52,1],"automargin":true,"anchor":"y2"},"yaxis2":{"domain":[0,1],"automargin":true,"type":"category","categoryorder":"array","categoryarray":["Co-authors","Invisible Option"],"anchor":"x2","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff","showticklabels":false},"yaxis":{"domain":[0,1],"automargin":true,"type":"category","categoryorder":"array","categoryarray":["Email","Photos","Pronouns"],"anchor":"x","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff","showticklabels":false},"annotations":[],"shapes":[],"images":[],"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":true,"title":"Comparing Journal vs Publisher Policy Feature Frequency:<br> Comprehensiveness"},"attrs":{"24f471a67ca8":{"y":{},"x":{},"texttemplate":"%{label}: %{value}","name":"Journals","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"24f4791f568e":{"y":{},"x":{},"texttemplate":"%{label}: %{value}","name":"Publishers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"subplot":true,"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -201,8 +445,8 @@ ul.task-list li input[type="checkbox"] {
 <h4 class="anchored" data-anchor-id="expediency-and-simplicity">Expediency and Simplicity</h4>
 <div class="cell">
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5b50884f4dae3ec14571" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-5b50884f4dae3ec14571">{"x":{"data":[{"y":["Email to Update","Form to Update","Insufficient update instructions"],"x":[3141,450,659],"texttemplate":["%{label}: %{value}","%{label}: %{value}","%{label}: %{value}"],"name":"Journals","type":"bar","orientation":"h","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":["Invisible Option","Co-authors"],"x":[37,26],"texttemplate":["%{label}: %{value}","%{label}: %{value}"],"name":"Publishers","type":"bar","orientation":"h","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x2","yaxis":"y2","frame":null}],"layout":{"xaxis":{"domain":[0,0.48],"automargin":true,"anchor":"y"},"xaxis2":{"domain":[0.52,1],"automargin":true,"anchor":"y2"},"yaxis2":{"domain":[0,1],"automargin":true,"type":"category","categoryorder":"array","categoryarray":["Co-authors","Invisible Option"],"anchor":"x2","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff","showticklabels":false},"yaxis":{"domain":[0,1],"automargin":true,"type":"category","categoryorder":"array","categoryarray":["Email to Update","Form to Update","Insufficient update instructions"],"anchor":"x","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff","showticklabels":false},"annotations":[],"shapes":[],"images":[],"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":true,"title":"Comparing Journal vs Publisher Policy Feature Frequency:<br>Expediency and Simplicity"},"attrs":{"56042aed629f":{"y":{},"x":{},"texttemplate":"%{label}: %{value}","name":"Journals","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"56043c3b6a41":{"y":{},"x":{},"texttemplate":"%{label}: %{value}","name":"Publishers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"subplot":true,"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-34197ceff4e0dbe8971f" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-34197ceff4e0dbe8971f">{"x":{"data":[{"y":["Email to Update","Form to Update","Insufficient update instructions"],"x":[3141,450,659],"texttemplate":["%{label}: %{value}","%{label}: %{value}","%{label}: %{value}"],"name":"Journals","type":"bar","orientation":"h","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":["Invisible Option","Co-authors"],"x":[37,26],"texttemplate":["%{label}: %{value}","%{label}: %{value}"],"name":"Publishers","type":"bar","orientation":"h","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x2","yaxis":"y2","frame":null}],"layout":{"xaxis":{"domain":[0,0.48],"automargin":true,"anchor":"y"},"xaxis2":{"domain":[0.52,1],"automargin":true,"anchor":"y2"},"yaxis2":{"domain":[0,1],"automargin":true,"type":"category","categoryorder":"array","categoryarray":["Co-authors","Invisible Option"],"anchor":"x2","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff","showticklabels":false},"yaxis":{"domain":[0,1],"automargin":true,"type":"category","categoryorder":"array","categoryarray":["Email to Update","Form to Update","Insufficient update instructions"],"anchor":"x","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff","showticklabels":false},"annotations":[],"shapes":[],"images":[],"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":true,"title":"Comparing Journal vs Publisher Policy Feature Frequency:<br>Expediency and Simplicity"},"attrs":{"24f434495520":{"y":{},"x":{},"texttemplate":"%{label}: %{value}","name":"Journals","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"24f4115357e0":{"y":{},"x":{},"texttemplate":"%{label}: %{value}","name":"Publishers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"subplot":true,"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -210,8 +454,8 @@ ul.task-list li input[type="checkbox"] {
 <h4 class="anchored" data-anchor-id="recurrence-and-maintenance">Recurrence and Maintenance</h4>
 <div class="cell">
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2d8becb88218fb621688" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-2d8becb88218fb621688">{"x":{"data":[{"y":["Internal Data Retention","Databases","Updates In-House Publication Citations"],"x":[274,4120,115],"texttemplate":["%{label}: %{value}","%{label}: %{value}","%{label}: %{value}"],"name":"Journals","type":"bar","orientation":"h","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":["Internal Data Retention","Databases","Updates In-House Publication Citations"],"x":[10,34,3],"texttemplate":["%{label}: %{value}","%{label}: %{value}","%{label}: %{value}"],"name":"Publishers","type":"bar","orientation":"h","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x2","yaxis":"y2","frame":null}],"layout":{"xaxis":{"domain":[0,0.48],"automargin":true,"anchor":"y"},"xaxis2":{"domain":[0.52,1],"automargin":true,"anchor":"y2"},"yaxis2":{"domain":[0,1],"automargin":true,"type":"category","categoryorder":"array","categoryarray":["Databases","Internal Data Retention","Updates In-House Publication Citations"],"anchor":"x2","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff","showticklabels":false},"yaxis":{"domain":[0,1],"automargin":true,"type":"category","categoryorder":"array","categoryarray":["Databases","Internal Data Retention","Updates In-House Publication Citations"],"anchor":"x","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff","showticklabels":false},"annotations":[],"shapes":[],"images":[],"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":true,"title":"Comparing Journal vs Publisher Policy Feature Frequency:<br>Recurrence and Maintenance"},"attrs":{"5604157156c3":{"y":{},"x":{},"texttemplate":"%{label}: %{value}","name":"Journals","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"56042dd08c7":{"y":{},"x":{},"texttemplate":"%{label}: %{value}","name":"Publishers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"subplot":true,"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5a1daa2a2d3c7f1d2a5e" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-5a1daa2a2d3c7f1d2a5e">{"x":{"data":[{"y":["Internal Data Retention","Databases","Updates In-House Publication Citations"],"x":[274,4120,115],"texttemplate":["%{label}: %{value}","%{label}: %{value}","%{label}: %{value}"],"name":"Journals","type":"bar","orientation":"h","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":["Internal Data Retention","Databases","Updates In-House Publication Citations"],"x":[10,34,3],"texttemplate":["%{label}: %{value}","%{label}: %{value}","%{label}: %{value}"],"name":"Publishers","type":"bar","orientation":"h","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x2","yaxis":"y2","frame":null}],"layout":{"xaxis":{"domain":[0,0.48],"automargin":true,"anchor":"y"},"xaxis2":{"domain":[0.52,1],"automargin":true,"anchor":"y2"},"yaxis2":{"domain":[0,1],"automargin":true,"type":"category","categoryorder":"array","categoryarray":["Databases","Internal Data Retention","Updates In-House Publication Citations"],"anchor":"x2","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff","showticklabels":false},"yaxis":{"domain":[0,1],"automargin":true,"type":"category","categoryorder":"array","categoryarray":["Databases","Internal Data Retention","Updates In-House Publication Citations"],"anchor":"x","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff","showticklabels":false},"annotations":[],"shapes":[],"images":[],"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":true,"title":"Comparing Journal vs Publisher Policy Feature Frequency:<br>Recurrence and Maintenance"},"attrs":{"24f44d7d262":{"y":{},"x":{},"texttemplate":"%{label}: %{value}","name":"Journals","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"24f45c5d5fb6":{"y":{},"x":{},"texttemplate":"%{label}: %{value}","name":"Publishers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"subplot":true,"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -223,8 +467,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-97571e8dd4e658e2f7d5" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-97571e8dd4e658e2f7d5">{"x":{"visdat":{"5604621e20a6":["function () ","plotlyVisDat"]},"cur_data":"5604621e20a6","attrs":{"5604621e20a6":{"y":{},"x":{},"name":"2019","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"5604621e20a6.1":{"y":{},"x":{},"name":"2020","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"5604621e20a6.2":{"y":{},"x":{},"name":"2021","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"5604621e20a6.3":{"y":{},"x":{},"name":"2022","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"5604621e20a6.4":{"y":{},"x":{},"name":"unknown date","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Policy Implementation Coverage by Year","yaxis":{"domain":[0,1],"automargin":true,"title":"","type":"category","categoryorder":"array","categoryarray":["journals","publishers"]},"xaxis":{"domain":[0,1],"automargin":true,"title":"Percent of Policy-Applicable Corpus"},"barmode":"stack","hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"y":["journals","publishers"],"x":[0.3,2.6],"name":"2019","type":"bar","orientation":"h","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":["journals","publishers"],"x":[26.2,20.5],"name":"2020","type":"bar","orientation":"h","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":["journals","publishers"],"x":[51.4,30.8],"name":"2021","type":"bar","orientation":"h","marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(44,160,44,1)"}},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":["journals","publishers"],"x":[2.8,7.7],"name":"2022","type":"bar","orientation":"h","marker":{"color":"rgba(214,39,40,1)","line":{"color":"rgba(214,39,40,1)"}},"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":["journals","publishers"],"x":[19.3,38.5],"name":"unknown date","type":"bar","orientation":"h","marker":{"color":"rgba(148,103,189,1)","line":{"color":"rgba(148,103,189,1)"}},"error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-fcd5852e003f5e719f88" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-fcd5852e003f5e719f88">{"x":{"visdat":{"24f43ab51323":["function () ","plotlyVisDat"]},"cur_data":"24f43ab51323","attrs":{"24f43ab51323":{"y":{},"x":{},"name":"2019","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"24f43ab51323.1":{"y":{},"x":{},"name":"2020","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"24f43ab51323.2":{"y":{},"x":{},"name":"2021","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"24f43ab51323.3":{"y":{},"x":{},"name":"2022","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"24f43ab51323.4":{"y":{},"x":{},"name":"unknown date","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Policy Implementation Coverage by Year","yaxis":{"domain":[0,1],"automargin":true,"title":"","type":"category","categoryorder":"array","categoryarray":["journals","publishers"]},"xaxis":{"domain":[0,1],"automargin":true,"title":"Percent of Policy-Applicable Corpus"},"barmode":"stack","hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"y":["journals","publishers"],"x":[0.3,2.6],"name":"2019","type":"bar","orientation":"h","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":["journals","publishers"],"x":[26.2,20.5],"name":"2020","type":"bar","orientation":"h","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":["journals","publishers"],"x":[51.4,30.8],"name":"2021","type":"bar","orientation":"h","marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(44,160,44,1)"}},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":["journals","publishers"],"x":[2.8,7.7],"name":"2022","type":"bar","orientation":"h","marker":{"color":"rgba(214,39,40,1)","line":{"color":"rgba(214,39,40,1)"}},"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":["journals","publishers"],"x":[19.3,38.5],"name":"unknown date","type":"bar","orientation":"h","marker":{"color":"rgba(148,103,189,1)","line":{"color":"rgba(148,103,189,1)"}},"error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
