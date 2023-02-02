@@ -440,13 +440,31 @@ implementation
 
 Unique features of certain policies
 
--   Sage's take on principles of
+-   Springer/Nature's Take on guiding principles
+
+    -   **Comprehensive** across all relevant search systems and across the version of records and associated metadata;
+
+    -   **Silent** so that readers will not be aware that a correction to an author\'s name has been made, with authors given the option of the change being silent or flagged;
+
+    -   **Inclusive** as to allow name changes for various reason ― principally to serve the needs of transgender scholars but also other reasons such as religious reasons;
+
+    -   **Cascaded** without unnecessary burden on authors to update abstracting and indexing sites
+
+        ([Springer Nature introduces trans inclusive name change policy \| Corporate Affairs Homepage \| Springer Nature](https://group.springernature.com/gp/group/media/press-releases/springer-nature-introduces-trans-inclusive-name-change-policy/19305714))
 
 -   Limited number of publishers offering citation updates
 
 -   Several publishers offer a variety of options for silent vs. in-print changes
 
-    -   More options = more freedom
+    -   More options = more freedom?
+
+        -   Two pronged approaches
+
+            -   
+
+        -   Three pronged approaches
+
+            -   
 
     -   Are librarians prepared to address this in our own information architecture?
 
@@ -456,7 +474,9 @@ Lack of alignment with underlying principles
 
     -   Having a policy that makes at-risk cases 'special' inherently heightens/highlights that risk rather than diffusing it
 
-        -   Springer nature
+        -   Springer Nature
+
+        -   PLoS
 
 -   Lack of clear instructions and ambiguity of what will and won't be changed might make it seem like an open policy, but it also leaves a lot of potential anxiety and unknowns around how a name change request that asks for more than a name will be received by the publisher
 
