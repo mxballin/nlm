@@ -62,6 +62,10 @@ In acknowledgement of the fact that not all policies include the phrase "name ch
 
 A total of 39 publishers were identified as having some form of name change policy.
 
+#### Policy Dates
+
+When the policies were identified, if a date of release or institution was included, it was documented as part of the publisher's policy profile. For those policies for which no date was published, additional news items announcing the release of the policy were used to identify such a date. If neither source of publication date were available, the Wayback Machine was used to determine likely publication year based on when the policy was made public on the publishers' webpage. If the pages were not sufficiently documented on the Wayback Machine (ie snapshots were only available from 2022), the date of the policy was left 'NA'.
+
 ### Policy Features
 
 Once the publishers with policies were identified, they underwent a content analysis that was based on the principles put forth by the NCWG.
