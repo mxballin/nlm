@@ -569,7 +569,3 @@ formattable(policytable,
     x ~ icontext(ifelse(x, "ok", "remove"), ifelse(x, "Yes", "No"))))
 )
 ```
-
-```{r}
-RColorBrewer::display.brewer.all()
-```
