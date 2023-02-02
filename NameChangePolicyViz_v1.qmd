@@ -399,10 +399,10 @@ recurrence
 implementationyear<-tribble(
   ~year,~journals,~publishers,
   "2019",12,1,
-  "2020",1110,7,
+  "2020",1112,8,
   "2021",2559,19,
   "2022",160,6,
-  "unknown",409,6
+  "unknown",407,5
 )
 
 implementationyear <-implementationyear %>%
@@ -423,7 +423,7 @@ brewer.pal(6,"Set2")
 #| echo: false
 progress <- tribble(~"type",~"unknown",~"Y2019",~"Y2020",~"Y2021",~"Y2022",
 "journals",9.6,.3,26.1,60.2,3.8,
-"publishers",15.4,2.6,17.9,48.7,15.4
+"publishers",12.8,2.6,20.5,48.7,15.4
 )
 
 implementation <- plot_ly(progress, y = ~type, x = ~Y2019, type = 'bar', name = '2019', marker=list(color='rgb(252,141,98)'),texttemplate='%{value}%')
@@ -544,26 +544,26 @@ policytable <- tribble(
 "Springer Nature",512,2021,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,NA,FALSE,TRUE,NA,TRUE,NA,
 "Oxford University Press",339,NA,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,NA,TRUE,"Policy mentions COPE generally but does not cite the name change policy guidance.",
 "SAGE Publishing",144,2021,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"FORM",FALSE,TRUE,FALSE,TRUE,"Acknowledges that it does not currently update citations but mentions working towards being able to do so in the future.",
-"Lippincott, Williams & Wilkins",128,2021,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,NA,FALSE,TRUE,NA,FALSE,NA,
+"Lippincott, Williams & Wilkins",128,2021,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,NA,FALSE,TRUE,NA,FALSE,"Policy date found using the Wayback Machine",
 "IEEE",93,2021,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,"FORM",TRUE,TRUE,TRUE,TRUE, "Will only update citations in IEEE publications",
-"Dove Medical Press",73,2021,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,"FORM",FALSE,TRUE,NA,FALSE, NA,
+"Dove Medical Press",73,2021,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,"FORM",FALSE,TRUE,NA,FALSE, "Policy date found using the Wayback Machine - page not archived before 2021",
 "BMJ (British Medical Association)",67,2021, TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,"EMAIL",TRUE,TRUE,FALSE,FALSE,NA,
-"Taylor & Francis",66,2021,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,NA,FALSE,NA,
+"Taylor & Francis",66,2021,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,NA,FALSE,"Policy date found using the Wayback Machine",
 "Frontiers",64,2022,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,"FORM",FALSE,TRUE,NA,FALSE,NA,
 "Cambridge University Press", 60,NA,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,"EMAIL",FALSE,FALSE,NA,FALSE,NA,
 "De Gruyter",53,2022,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"EMAIL",TRUE,TRUE,NA,TRUE,"COPE guidance is mentioned in a blog post about the policy but not in the language of the policy itself.",
 "American Chemical Society",47,2021,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,"FORM",FALSE,TRUE,FALSE,FALSE,"Acknowledges that it does not currently update citations but mentions working towards being able to do so in the future.",
 "American Psychological Association",42,2020,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,FALSE,NA,FALSE,NA,
 "Royal Society of Chemistry",27,2020,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,"EMAIL",TRUE,TRUE,FALSE,FALSE,NA,
-"Mary Ann Liebert",16,2022,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,"EMAIL",FALSE,FALSE,NA,FALSE,NA,
+"Mary Ann Liebert",16,2022,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,"EMAIL",FALSE,FALSE,NA,FALSE,"Policy date found using the Wayback Machine",
 "American Medical Association",14,2022,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,NA,FALSE,TRUE,NA,FALSE,NA,
 "IOP Publishing",14,2021,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,"FORM",FALSE,TRUE,FALSE,FALSE,NA,
 "Association for Computing Machinery",12,2019,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,"EMAIL",TRUE,TRUE,TRUE,FALSE,"Will only update citations in ACM publications",
-"MIT Press",10,2022,NA,FALSE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,FALSE,NA,FALSE,NA,
+"MIT Press",10,2022,NA,FALSE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,FALSE,NA,FALSE,"Policy date found using the Wayback Machine",
 "Ubiquity Press",10,2021,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,"FORM",TRUE,TRUE,TRUE,TRUE,"Only offers updating citations within the articles in question.",
 "American Institute of Physics",9,2021,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,FALSE,FALSE,"Acknowledges that it does not currently update citations but mentions working towards being able to do so in the future.",
 "Public Library of Science (PLoS)",9,2020,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,NA,TRUE,"Policy mentions COPE generally but does not cite the name change policy guidance.",
-"EDP Sciences",8,2021,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,"EMAIL",FALSE,TRUE,FALSE,TRUE,NA,
+"EDP Sciences",8,2021,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,"EMAIL",FALSE,TRUE,FALSE,TRUE,"Policy date found using the Wayback Machine",
 "Future Science Group",8,2021,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,NA,FALSE,NA,
 "American Physiological Society",6,2021,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,NA,FALSE,NA,
 "Company of Biologists",5,2021,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,"EMAIL",TRUE,TRUE,NA,FALSE,NA,
@@ -574,9 +574,9 @@ policytable <- tribble(
 "American Society for Microbiology",2,2020,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,"EMAIL",FALSE,TRUE,FALSE,FALSE,NA,
 "IOS Press",2,NA, FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,"FORM",FALSE,FALSE,NA,TRUE,NA,
 "PeerJ Publishing",2,2021,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,NA,FALSE,NA,
-"Radiological Society of North America",2,2022,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,"EMAIL",FALSE,TRUE,NA,FALSE,NA,
-"Royal Society",2,2021,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,"EMAIL",TRUE,TRUE,NA,FALSE,NA,
-"Wellcome Trust",2,2020,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,"EMAIL",TRUE,TRUE,NA,FALSE,NA,
+"Radiological Society of North America",2,2022,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,"EMAIL",FALSE,TRUE,NA,FALSE,"Policy date found using the Wayback Machine",
+"Royal Society",2,2021,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,"EMAIL",TRUE,TRUE,NA,FALSE,"Policy date found using the Wayback Machine",
+"Wellcome Trust",2,2020,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,"EMAIL",TRUE,TRUE,NA,FALSE,"Policy date found using the Wayback Machine",
 "eLife Sciences Publications",1,2020,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,"EMAIL",FALSE,TRUE,FALSE,FALSE,NA
 )
 
