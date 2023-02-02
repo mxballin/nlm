@@ -403,6 +403,46 @@ implementation
 
 ## Discussion
 
+Unique features of certain policies
+
+-   Sage's take on principles of
+
+-   Limited number of publishers offering citation updates
+
+-   Several publishers offer a variety of options for silent vs. in-print changes
+
+    -   More options = more freedom
+
+    -   Are librarians prepared to address this in our own information architecture?
+
+Lack of alignment with underlying principles
+
+-   'Calling out' trans and nb authors and making the policy only available to them is ultimately harmful in its own way.
+
+    -   Having a policy that makes at-risk cases 'special' inherently heightens/highlights that risk rather than diffusing it
+
+        -   Springer nature
+
+-   Lack of clear instructions and ambiguity of what will and won't be changed might make it seem like an open policy, but it also leaves a lot of potential anxiety and unknowns around how a name change request that asks for more than a name will be received by the publisher
+
+-   Contact of co-authors/corresponding authors
+
+    -   Most publishers mention it
+
+-   Inclusion of mention of data retention - ultimate transparency
+
+How can medical librarians prepare scholars who are looking to change the version of record and also how can they advocate for inclusive policies
+
+-   journals such as JMLA should develop policies
+
+-   creating libguides that help point to relevant resources
+
+-   advocate for these principles within institutional repositories
+
+-   advocacy within publishing engagement
+
+Discussion question: What are the roles of health librarians and informationists in developing and facilitating an inclusive publishing environment?
+
 ## Limitations
 
 ## Conflicts of Interest
