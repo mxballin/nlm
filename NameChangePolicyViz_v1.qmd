@@ -18,7 +18,7 @@ suppressPackageStartupMessages(library(RColorBrewer))
 
 ## Background
 
-In 2021, the Trans Name Change Policy Working Group (NCPWG) authored a article for the Committee for Publishing Ethics (COPE) that outlined their vision for "a more trans inclusive publishing world" (Tannenbaum et al, 2021). In the article, the group detailed barriers to receiving full credit for their academic work and offered guiding principles for what an inclusive name change policy should look like.
+In 2021, the Trans Name Change Policy Working Group (NCPWG) authored a article for the Committee for Publishing Ethics (COPE) that outlined their vision for "a more trans inclusive publishing world" (Tannenbaum et al, 2021). In the article, the group detailed barriers that impact trans, nonbinary, and other individuals' ability to receive full credit for their academic work in the manner in which they would wish to be addressed. They also laid out guiding principles for name change policies that would enable publishing to be more inclusive and to reduce emotional and intellectual barriers to achieving a version of record (VOR) that reflects \[need to wordsmith\].
 
 The principles discussed in the article are as follows:
 
@@ -444,7 +444,7 @@ Unique features of certain policies
 
     -   **Comprehensive** across all relevant search systems and across the version of records and associated metadata;
 
-    -   **Silent** so that readers will not be aware that a correction to an author\'s name has been made, with authors given the option of the change being silent or flagged;
+    -   **Silent** so that readers will not be aware that a correction to an author's name has been made, with authors given the option of the change being silent or flagged;
 
     -   **Inclusive** as to allow name changes for various reason ― principally to serve the needs of transgender scholars but also other reasons such as religious reasons;
 
