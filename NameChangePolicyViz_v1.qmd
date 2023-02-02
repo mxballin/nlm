@@ -400,9 +400,9 @@ implementationyear<-tribble(
   ~year,~journals,~publishers,
   "2019",12,1,
   "2020",1110,7,
-  "2021",2196,14,
+  "2021",2559,19,
   "2022",160,6,
-  "unknown",772,11
+  "unknown",409,6
 )
 
 implementationyear <-implementationyear %>%
@@ -422,8 +422,8 @@ brewer.pal(6,"Set2")
 ```{r}
 #| echo: false
 progress <- tribble(~"type",~"unknown",~"Y2019",~"Y2020",~"Y2021",~"Y2022",
-"journals",18.2,.3,26.1,51.7,3.8,
-"publishers",28.2,2.6,17.9,35.9,15.4
+"journals",9.6,.3,26.1,60.2,3.8,
+"publishers",15.4,2.6,17.9,48.7,15.4
 )
 
 implementation <- plot_ly(progress, y = ~type, x = ~Y2019, type = 'bar', name = '2019', marker=list(color='rgb(252,141,98)'),texttemplate='%{value}%')
@@ -544,11 +544,11 @@ policytable <- tribble(
 "Springer Nature",512,2021,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,NA,FALSE,TRUE,NA,TRUE,NA,
 "Oxford University Press",339,NA,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,NA,TRUE,"Policy mentions COPE generally but does not cite the name change policy guidance.",
 "SAGE Publishing",144,2021,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"FORM",FALSE,TRUE,FALSE,TRUE,"Acknowledges that it does not currently update citations but mentions working towards being able to do so in the future.",
-"Lippincott, Williams & Wilkins",128,NA,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,NA,FALSE,TRUE,NA,FALSE,NA,
-"IEEE",93,NA,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,"FORM",TRUE,TRUE,TRUE,TRUE, "Will only update citations in IEEE publications",
-"Dove Medical Press",73,NA,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,"FORM",FALSE,TRUE,NA,FALSE, NA,
+"Lippincott, Williams & Wilkins",128,2021,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,NA,FALSE,TRUE,NA,FALSE,NA,
+"IEEE",93,2021,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,"FORM",TRUE,TRUE,TRUE,TRUE, "Will only update citations in IEEE publications",
+"Dove Medical Press",73,2021,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,"FORM",FALSE,TRUE,NA,FALSE, NA,
 "BMJ (British Medical Association)",67,2021, TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,"EMAIL",TRUE,TRUE,FALSE,FALSE,NA,
-"Taylor & Francis",66,NA,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,NA,FALSE,NA,
+"Taylor & Francis",66,2021,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,NA,FALSE,NA,
 "Frontiers",64,2022,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,"FORM",FALSE,TRUE,NA,FALSE,NA,
 "Cambridge University Press", 60,NA,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,"EMAIL",FALSE,FALSE,NA,FALSE,NA,
 "De Gruyter",53,2022,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"EMAIL",TRUE,TRUE,NA,TRUE,"COPE guidance is mentioned in a blog post about the policy but not in the language of the policy itself.",
@@ -569,14 +569,14 @@ policytable <- tribble(
 "Company of Biologists",5,2021,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,"EMAIL",TRUE,TRUE,NA,FALSE,NA,
 "Emerald Group Publishing",5,2020,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,NA,FALSE,TRUE,NA,FALSE,NA,
 "Optical Society of America",5,NA,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,"EMAIL",FALSE,TRUE,FALSE,FALSE,NA,
-"Rockefeller University Press",3,NA,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"FORM",TRUE,TRUE,FALSE,FALSE,NA,
+"Rockefeller University Press",3,2021,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"FORM",TRUE,TRUE,FALSE,FALSE,NA,
 "Copernicus Publications",3,2022,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,FALSE,FALSE,NA,
 "American Society for Microbiology",2,2020,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,"EMAIL",FALSE,TRUE,FALSE,FALSE,NA,
 "IOS Press",2,NA, FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,"FORM",FALSE,FALSE,NA,TRUE,NA,
 "PeerJ Publishing",2,2021,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,"EMAIL",FALSE,TRUE,NA,FALSE,NA,
 "Radiological Society of North America",2,2022,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,"EMAIL",FALSE,TRUE,NA,FALSE,NA,
 "Royal Society",2,2021,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,"EMAIL",TRUE,TRUE,NA,FALSE,NA,
-"Wellcome Trust",2,NA,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,"EMAIL",TRUE,TRUE,NA,FALSE,NA,
+"Wellcome Trust",2,2020,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,"EMAIL",TRUE,TRUE,NA,FALSE,NA,
 "eLife Sciences Publications",1,2020,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,"EMAIL",FALSE,TRUE,FALSE,FALSE,NA
 )
 
